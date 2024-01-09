@@ -1,0 +1,307 @@
+/* ПРАВИЛО - Если мы хотим в середине отцовского элемента подвинуть дочерние элементы
+то нужно двигать через PADING */
+
+
+
+/* h1 {
+    border: 4px solid rgb(233, 68, 68);
+   
+}
+p {
+    border: 2px solid rgb(37, 182, 114);
+}
+.main-title {
+    background-color: rgb(236, 177, 214);
+    /* Указываю через (class) . только для одного элемента 
+} 
+*/
+/* 
+.mainbutton {
+    border: 3px solid rgb(0, 0, 0);
+}
+.mainbutton [:disabled] {
+    border: 3px solid rgb(37, 182, 114);
+} */
+
+
+/* .mainbutton {
+    color: var(--bakery-landing-1-background, #FAF4EA);
+    border-radius: 8px;
+    border: 2px solid #819B57;
+    background-color: #819B57;
+} */
+
+/* 
+________________________________________________________________ */
+/* Настройки по умолчанию цветов */
+
+:root {
+    --color-primary-light: #FAF4EA;
+    --color-primary-dark: #31261A;
+    --color-brand: #819B57;
+    --color-brand-dark: #465929;
+}
+
+
+/* База */
+
+* {
+    box-sizing: border-box;
+    /* Звездочка означает для всех элементов. Указывает что ширина элемента будет такая как  указать не больше и не меньше */
+}
+
+body {
+    color: var(--color-primary-dark);
+    /* Основной цвет текста на сайте  */
+    font-family: 'Poppins', sans-serif;
+    /* Основной шрифт на сайте */
+    font-size: 18px;
+    /* Основной размер шрифта текста */
+    font-weight: 400;
+    /* Значения ширины всего текста weight */
+    line-height: 1.5;
+    /* Значение отступа строк друг от друга */
+    margin: 0;
+    /* Самая большая прозрачная рамка всего сайта, удаляем */
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin-top: 0;
+}
+
+address {
+    font-style: normal;
+}
+
+ul {list-style-type: none;}
+/* Убираем точки при юл */
+
+.hidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    /* Скрываем заголовок на сайте визуально */
+}
+
+.all-section {
+    padding: 48px 0;
+    /* Делает отступ от каждой сексии по 48, что в сумме даст 96 пикселей */
+}
+
+.container {
+    width: 100%;
+    /* Делаем фиксированую ширину страницы сайта определенного размера */
+    max-width: 1288px;
+    /* Максимальная ширина */
+    
+    margin: 0 auto;
+    /* Отцентровали все блоки по центру (которые поместили в Div container)
+    чтобы сайт шел по центру */
+
+    padding: 0 24px;
+    /* Добавили невидимую рамку по бокам (отступ со всех сторон для всего) */
+    /* После добовляем к max-width 24*2+1240=1288px и указываем их там (так как
+    мы указали box-sizing: border-box; - размер не привышает*/
+}
+
+
+/* header */
+/* Кнопки */
+[type=button] {
+    color: var(--color-primary-light);
+    font-weight: 600;
+    border-radius: 8px;
+    border: 2px solid var(--color-brand);
+    background-color: var(--color-brand);
+    cursor: pointer;
+
+    display: flex;
+    padding: 16px 32px;
+    align-items: flex-start;
+    gap: 10px;
+}
+.mainbutton:hover {
+    color: var(--color-brand-dark);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.buttonsection5:hover {
+    color: var(--color-brand-dark);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* Ссылки */
+.link {
+    color: var(--color-primary-light);
+    text-decoration: none;
+    /* Текст-декорейшн - убирает подчеркивания из ссылок */
+}
+.link:hover {
+    color: var(--color-brand);
+    font-weight: 600;
+}
+
+
+.info-link {
+    color: var(--color-primary-light);
+    text-decoration: none;
+    /* Текст-декорейшн - убирает подчеркивания из ссылок */
+}
+.info-link:hover {
+    color: var(--color-brand);
+}
+
+
+
+.incognito-link {
+    color: var(--color-primary-light);
+    text-decoration: none;
+}
+.incognito-link:hover {
+    color: var(--color-brand);
+}
+
+/* Секции */
+
+
+/* Section 1 */
+.hero-title {
+    /* Секция 1 Н1 */
+    color: var(--color-primary-light);
+    /* Ширина текста */
+    font-weight: 900;
+    /* Размещения надписи (только текст) на странице (слева,центр,справа) */
+    text-align: center;
+    /* Тень за текстом */
+    text-shadow: -2px -2px 7px black;
+
+    font-size: 128px;
+    font-style: normal;
+    margin-bottom: 0;
+    /* Убираем невидимый отступ внутри блока */
+}
+
+.hero-title .main-name {
+    color: var(--color-brand);
+    /* Секция 1 Н1> сменили цвет второго слова (пробел перед . обязателен)  */
+}
+
+.hero-section {
+    padding: 272px 0;
+}
+
+
+/* Section 2 */
+.section-tittle {
+    /* Все названия секций Н2 */
+    color: var(--color-primary-dark);
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 1.3;
+}
+
+.tradition-title {
+    margin-bottom: 42px;
+    /* Добавил отступ снизу от текста до текста */
+}
+
+.section-tittle .section-spn {
+    color: var(--color-brand-dark);
+}
+
+/* Внутренности секций */
+.adv-list {
+    /* Секция 2 с ЮЛ Великий попит на ринку */
+    color: var(--color-primary-light);
+    background: var(--color-brand);
+    padding: 16px 99px;
+}
+
+.adv-item {
+    font-size: 20px;
+    font-weight: 300;
+    display: inline;
+    /* Ставим надписи в одну линию, но мы не можем задать размер */
+}
+
+
+.Tradition-text {
+    /* sec 2 параграфы под Н2 shop bakery*/
+    color: var(--color-brand);
+    /* text-transform: uppercase делает все буквы большими, lowercase маленькими */
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.Tradition-textua {
+    /* sec 2 параграфы под Н2*/
+    color: var(--color-brand);
+    font-weight: 600;
+}
+
+.Format-tradition {
+    padding-top: 96px;
+}
+
+
+/* section 3 Наші найкращі шеф -кухарі*/
+.chef-name {
+    margin-bottom: 16px;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.cooks-title {
+    margin-bottom: 80px;
+}
+
+
+/* section 4 Walrus */
+.format-title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.format-text {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.formatsss-title {
+    margin-bottom: 80px;
+}
+
+
+/* section 5 Приєднуйся до мережі пекарень */
+.invite-text {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.contact-title {
+    margin-bottom: 16px;
+}
+
+
+/* footer */
+.info-link {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.incognito-link {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.datesecurity {
+    /* security подвал */
+    color: #A18268;
+    font-size: 14px;
+    font-weight: 400;
+}
